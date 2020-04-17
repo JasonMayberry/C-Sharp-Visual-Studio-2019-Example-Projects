@@ -1,0 +1,27 @@
+<Window x:Class="Notepad.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Notepad"
+        mc:Ignorable="d"
+        Title="Binpad" Height="450" Width="814.154" Icon="binpad.png">
+    <Grid Margin="10, 0, 10, 0">
+        <DockPanel VerticalAlignment="Top" HorizontalAlignment="Center" Height="38" Margin="1,1,10,0">
+            <Menu DockPanel.Dock="Top" VerticalAlignment="Center" FontSize="16" Margin="0,0,-0.2,0" Width="781">
+                <MenuItem x:Name="BtnNew" Header="&#xE710;" FontFamily="Segoe MDL2 Assets" FontSize="16" Height="25" Width="35" ToolTip="New Document" Click="BtnNew_Click" />
+                <MenuItem x:Name="BtnSave" Header="&#xE74E;" FontFamily="Segoe MDL2 Assets" FontSize="16" Height="25" Width="35" ToolTip="Save Document" Click="BtnSave_Click" />
+                <MenuItem x:Name="BtnOpen" Header="&#xE838;" FontFamily="Segoe MDL2 Assets" FontSize="16" Height="25" Width="35" ToolTip="Open Document" Click="BtnOpen_Click" />
+            </Menu>
+        </DockPanel>
+        <DockPanel VerticalAlignment="Center" Height="350" Margin="0,44,10,28">
+            <ScrollViewer Margin="0,10">
+                <TextBox x:Name="TxtBody" AcceptsReturn="True" AcceptsTab="True" BorderThickness="0" TextWrapping="Wrap" FontFamily="Consolas" Height="337" Padding="20,20,20,20" FontSize="14" TextChanged="TxtBody_TextChanged"/>
+            </ScrollViewer>
+        </DockPanel>
+        <DockPanel VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="20" Margin="1">
+            <TextBlock x:Name="CharCount" Text="0 / 2000000000" FontSize="8" VerticalAlignment="Center" Width="250" />
+            <TextBlock x:Name="FileName" Text="File: " FontSize="8" VerticalAlignment="Center" Width="250" />
+        </DockPanel>
+    </Grid>
+</Window>

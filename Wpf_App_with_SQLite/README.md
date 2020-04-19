@@ -1,4 +1,4 @@
-How to add, delete, update data into sqlite database using C# in a WPF App  
+Small App that can add, delete, update data into sqlite database using C# in a WPF App  
    
 One nuget Package needed:  
   

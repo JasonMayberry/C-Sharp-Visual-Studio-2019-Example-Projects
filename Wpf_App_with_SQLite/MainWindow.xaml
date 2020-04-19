@@ -1,0 +1,39 @@
+<Window x:Class="Test_Wpf_App_with_SQLite.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Test_Wpf_App_with_SQLite"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="490" Width="880">
+    <Grid>
+        <Button Content="✔DB" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="38" Click="Button_Click"/>
+        <Button Content="ADD ALBUM TO DATABASE" HorizontalAlignment="Left" Margin="63,283,0,0" VerticalAlignment="Top" Width="168" Click="Button_Click_1"/>
+        <Button Content="SELECT ALL FROM DATABASE" HorizontalAlignment="Left" Margin="617,367,0,0" VerticalAlignment="Top" Width="168" Click="Button_Click_2"/>
+        <TextBox x:Name="outBox" HorizontalAlignment="Left" Height="372" Margin="251,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="361" BorderThickness="2"/>
+        <Label Content="Output Box" HorizontalAlignment="Left" Margin="399,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Title" HorizontalAlignment="Left" Margin="63,199,0,0" VerticalAlignment="Top"/>
+        <Label Content="Artist" HorizontalAlignment="Left" Margin="63,239,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="title" HorizontalAlignment="Left" Height="23" Margin="111,203,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="artist" HorizontalAlignment="Left" Height="23" Margin="111,243,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="63,111,0,0" TextWrapping="Wrap" Text="This app allows you to build a database consisting of album titles and the artists who created them." VerticalAlignment="Top" Height="71" Width="168"/>
+        <Button x:Name="deleteById" Content="Delete by ID:" HorizontalAlignment="Left" Margin="617,248,0,0" VerticalAlignment="Top" Width="75" Click="deleteById_Click" Height="24"/>
+
+        <TextBox x:Name="Textbox" Height="20" Margin="0,252,82.2,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Right" Width="93" ></TextBox>
+
+        <TextBlock x:Name="Placeholder" IsHitTestVisible="False" TextWrapping="Wrap" Text="Enter ID Num Placeholder Text" VerticalAlignment="Top" Margin="0,252,83.2,0" Foreground="DarkGray" HorizontalAlignment="Right" Width="82" Height="19">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName=Textbox}" Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+
+    </Grid>
+
+</Window>

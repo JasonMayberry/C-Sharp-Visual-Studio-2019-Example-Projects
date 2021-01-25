@@ -1,0 +1,47 @@
+<Window x:Class="Test_Wpf_App_with_SQLite.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Test_Wpf_App_with_SQLite"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="490" Width="880">
+    <Grid>
+        <Button Content="✔DB" HorizontalAlignment="Left" Margin="827,433,0,0" VerticalAlignment="Top" Width="38" Click="Button_Click" RenderTransformOrigin="22.371,18.765"/>
+        <Button Content="ADD TO DATABASE" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" Width="168" Click="Button_Click_1"/>
+        <Button Content="SELECT ALL FROM DATABASE" HorizontalAlignment="Left" Margin="203,161,0,0" VerticalAlignment="Top" Width="168" Click="Button_Click_2"/>
+        <TextBox x:Name="outBox" HorizontalAlignment="Left" Height="169" Margin="154,186,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="594" BorderThickness="2"/>
+        <Label Content="Inspection Date:" HorizontalAlignment="Left" Margin="1,3,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.725,-2.269"/>
+        <DatePicker x:Name="Inspection_Date" HorizontalAlignment="Left" Margin="98,4,0,0" VerticalAlignment="Top"/>
+        <Label Content="Inspection Type:" HorizontalAlignment="Left" Margin="0,32,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="Inspection_Type" HorizontalAlignment="Left" Margin="98,36,0,0" IsEditable="True" VerticalAlignment="Top" Width="101">
+            <ComboBoxItem Content="Drive-in"></ComboBoxItem>
+            <ComboBoxItem Content="Teardown"></ComboBoxItem>
+            <ComboBoxItem Content="Field"></ComboBoxItem>
+            <ComboBoxItem Content="Remote"></ComboBoxItem>
+        </ComboBox>
+        <!--<TextBox x:Name="Inspection_Date" HorizontalAlignment="Left" Height="23" Margin="101,4,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>-->
+        <!--<TextBox x:Name="Inspection_Type" HorizontalAlignment="Left" Height="23" Margin="101,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>-->
+        <TextBlock HorizontalAlignment="Left" Margin="187,360,0,0" TextWrapping="Wrap" Text="This app allows you to build a database consisting of Inspection Date and Inspection Type." VerticalAlignment="Top" Height="26" Width="532"/>
+        <Button x:Name="deleteById" Content="Delete by ID:" HorizontalAlignment="Left" Margin="554,157,0,0" VerticalAlignment="Top" Width="75" Click="deleteById_Click" Height="24"/>
+        <TextBox x:Name="Textbox" Height="24" Margin="0,157,145.2,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Right" Width="93" ></TextBox>
+        <TextBlock x:Name="Placeholder" IsHitTestVisible="False" TextWrapping="Wrap" Text="Enter ID Num Placeholder Text" VerticalAlignment="Top" Margin="0,157,156.2,0" Foreground="DarkGray" HorizontalAlignment="Right" Width="82" Height="24">
+
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName=Textbox}" Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+
+
+
+    </Grid>
+
+</Window>
+    
